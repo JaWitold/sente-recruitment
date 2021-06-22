@@ -60,7 +60,7 @@ $(document).ready(() => {
     let start = current * number
 
     if (start < 0) start = 1;
-    if(start >= total) start = total-number
+    if (start >= total) start = total - number
     await loadList(start);
     $('#page').val(start / number + 1)
   })
@@ -74,6 +74,10 @@ $(document).ready(() => {
       await loadList(0);
     }
   })
+
+  $(document).on("click", "tr" , function() {
+    showModal(this)
+  })
 })
 
 async function loadList(start) {
@@ -81,4 +85,18 @@ async function loadList(start) {
   const number = $('#number').val()
 
   $('#table').load("productView.php", {search: input, start: start, number: number})
+}
+
+function showModal(element) {
+  //console.log(element.id)
+  const children = $(element).children("td")
+
+  const sku = children.eq(1).text()
+  const name = children.eq(2).text()
+  const desc = children.eq(3).text()
+  const price = children.eq(4).html()
+
+  $('#modal-label').html(name + " <small>[sku: " + sku + "]</small>")
+  $('#modal-description').text(desc)
+  $('#modal-price').html(price)
 }

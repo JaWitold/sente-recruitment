@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Sente Recruitment</title>
+    <title>Sente zadanie rekrutacyjne</title>
 
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -18,9 +18,30 @@
 
 </head>
 <body class="bg-dark text-light">
+<!-- Modal -->
+<div class="modal fade" id="custom-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true""
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content text-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-label">nazwa <small>[SKU]</small></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6 id="modal-price">cena</h6>
+                <p id="modal-description">opis</p>
+                <img class="img-fluid" src="https://picsum.photos/600/400.webp?random=1" alt="image">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">zamknij</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <header class="container d-flex flex-column align-items-center justify-content-center mt-5">
-    <h1 class="h1 mb-3">Sente recruitment task</h1>
+    <h1 class="h1 mb-3">Sente zadanie rekrutacyjne</h1>
 
     <section class="my-2 input-group">
         <input type="text" id="search" placeholder="szukaj [sku, nazwa, opis]" class="form-control">
@@ -32,7 +53,7 @@
             <option value="100">100</option>
             <option value="200">200</option>
         </select>
-        <input type="button" class="btn btn-success" id="submit" value="submit">
+        <input type="button" class="btn btn-success" id="submit" value="szukaj">
     </section>
     <nav class="my-2 input-group">
 
